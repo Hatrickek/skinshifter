@@ -1,5 +1,0 @@
-[project]
-name = "$Skinshifter"
-asset_directory = "$Skinshifter/Assets"
-start_scene = ""
-module_name = "$Skinshifter/$SkinshifterModule"
