@@ -23,5 +23,4 @@ endif(UNIX)
 
 # Sub-projects
 add_subdirectory(skinshifter)
-add_subdirectory(skinshifterModule)
 
