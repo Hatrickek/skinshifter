@@ -48,12 +48,6 @@ endif()
 if (EXISTS ${CMAKE_SOURCE_DIR}/${PRJ_NAME}/Assets)
 add_custom_command(TARGET ${PRJ_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/${PRJ_NAME}/Assets $<TARGET_FILE_DIR:${PRJ_NAME}>/Assets)
 endif()
-# Copy module
-if (WIN32)
-add_custom_command(TARGET ${PRJ_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/${PRJ_NAME}/${PRJ_NAME}Module.dll $<TARGET_FILE_DIR:${PRJ_NAME}>)
-else()
-add_custom_command(TARGET ${PRJ_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/${PRJ_NAME}/${PRJ_NAME}Module.so $<TARGET_FILE_DIR:${PRJ_NAME}>)
-endif()
 
 if (NOT EXISTS ${CMAKE_SOURCE_DIR}/cpm.cmake)
   file(DOWNLOAD https://github.com/cpm-cmake/CPM.cmake/releases/download/v0.38.7/CPM.cmake ${CMAKE_SOURCE_DIR}/cpm.cmake SHOW_PROGRESS)

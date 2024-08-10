@@ -15,7 +15,6 @@ if (ENABLE_ASAN)
     add_link_options(-fsanitize=address)
 endif()
 
-
 # fix for dxc
 if (UNIX)
     add_compile_options(-fms-extensions)

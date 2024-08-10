@@ -1,14 +1,14 @@
 #include <Core/EntryPoint.hpp>
 #include <Core/App.hpp>
 
-#include "skinshifterLayer.hpp"
+#include "SkinshifterLayer.hpp"
 
 #include <filesystem>
 
 namespace ox {
-class skinshifterApp : public ox::App {
+class SkinshifterApp : public ox::App {
 public:
-  skinshifterApp(const ox::AppSpec& spec) : App(spec) { }
+  SkinshifterApp(const ox::AppSpec& spec) : App(spec) { }
 };
 
 App* create_application(const AppCommandLineArgs& args) {
@@ -18,8 +18,8 @@ App* create_application(const AppCommandLineArgs& args) {
   spec.command_line_args = args;
   spec.assets_path = "Assets";
 
-  const auto app = new skinshifterApp(spec);
-  app->push_layer(new $NAMESPACE::skinshifterLayer());
+  const auto app = new SkinshifterApp(spec);
+  app->push_layer(new ss::SkinshifterLayer());
 
   return app;
 }
